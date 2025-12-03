@@ -5,6 +5,7 @@ import { SplineScene } from '@/components/ui/spline-scene'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Button } from '@/components/ui/button'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export function HeroSection() {
   return (
@@ -73,9 +74,11 @@ export function HeroSection() {
               transition={{ delay: 0.7, duration: 0.8 }}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
-              <Button variant="default" size="lg" className="group">
-                View Projects
-                <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+              <Button variant="default" size="lg" className="group" asChild>
+                <Link to="/about">
+                  About Me
+                  <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+                </Link>
               </Button>
               <Button variant="outline" size="lg">
                 Get in Touch

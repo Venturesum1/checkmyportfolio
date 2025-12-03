@@ -1,7 +1,9 @@
-import { HeroSection } from '@/components/portfolio/HeroSection'
-import { FullScreenScrollFX } from '@/components/ui/full-screen-scroll-fx'
+import React from "react";
+import { FullScreenScrollFX, FullScreenFXAPI } from "@/components/ui/full-screen-scroll-fx";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
-const aboutSections = [
+const sections = [
   {
     leftLabel: "Vision",
     title: <>Creative Excellence</>,
@@ -26,15 +28,23 @@ const aboutSections = [
     rightLabel: "Future",
     background: "https://images.pexels.com/photos/939807/pexels-photo-939807.jpeg",
   },
-]
+];
 
-const Index = () => {
+export default function About() {
+  const apiRef = React.useRef<FullScreenFXAPI>(null);
+
   return (
-    <main className="relative">
-      <HeroSection />
+    <div className="relative">
+      <Link 
+        to="/" 
+        className="fixed top-6 left-6 z-50 flex items-center gap-2 text-white/80 hover:text-white transition-colors bg-black/20 backdrop-blur-sm px-4 py-2 rounded-lg"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Back
+      </Link>
       
       <FullScreenScrollFX
-        sections={aboutSections}
+        sections={sections}
         header={<><div>About</div><div>Me</div></>}
         footer={<div></div>}
         showProgress
@@ -46,8 +56,6 @@ const Index = () => {
           stageBg: "hsl(240 10% 3.9%)",
         }}
       />
-    </main>
-  )
+    </div>
+  );
 }
-
-export default Index
