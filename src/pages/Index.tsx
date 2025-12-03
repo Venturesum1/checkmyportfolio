@@ -1,5 +1,6 @@
 import { HeroSection } from '@/components/portfolio/HeroSection'
 import { FullScreenScrollFX } from '@/components/ui/full-screen-scroll-fx'
+import { SkillsSection } from '@/components/portfolio/SkillsSection'
 
 const aboutSections = [
   {
@@ -46,6 +47,7 @@ const Index = () => {
           stageBg: "hsl(240 10% 3.9%)",
         }}
       />
+        <SkillsSection />
     </main>
   )
 }
