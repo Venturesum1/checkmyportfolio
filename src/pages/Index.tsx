@@ -1,6 +1,9 @@
 import { HeroSection } from '@/components/portfolio/HeroSection'
 import { FullScreenScrollFX } from '@/components/ui/full-screen-scroll-fx'
+import { ProjectsSection } from '@/components/portfolio/ProjectsSection'
 import { SkillsSection } from '@/components/portfolio/SkillsSection'
+import { ExperienceSection } from '@/components/portfolio/ExperienceSection'
+import { WhatsAppButton } from '@/components/ui/whatsapp-button'
 
 const aboutSections = [
   {
@@ -33,7 +36,7 @@ const Index = () => {
   return (
     <main className="relative">
       <HeroSection />
-      
+
       <FullScreenScrollFX
         sections={aboutSections}
         header={<><div>About</div><div>Me</div></>}
@@ -47,7 +50,11 @@ const Index = () => {
           stageBg: "hsl(240 10% 3.9%)",
         }}
       />
-        <SkillsSection />
+      <ExperienceSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <WhatsAppButton phoneNumber="919800425510" message="Hi! I saw your portfolio and would like to connect." />
+
     </main>
   )
 }

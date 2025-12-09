@@ -53,7 +53,7 @@ export function HeroSection() {
                 
               <span className="text-gradient">Creative</span>
               <br />
-              <span className="text-foreground">Developer soumyasis </span>
+              <span className="text-foreground">Developer Soumyasis </span>
             </motion.h1>
 
             {/* Description */}

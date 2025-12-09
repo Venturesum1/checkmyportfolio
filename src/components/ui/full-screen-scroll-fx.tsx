@@ -521,7 +521,7 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                   </div>
                 </div>
 
-                <div className="fx-footer">
+                {/* <div className="fx-footer">
                   {footer && <div className="fx-footer-title">{footer}</div>}
                   {showProgress && (
                     <div className="fx-progress">
@@ -534,14 +534,14 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                       </div>
                     </div>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
-          <div className="fx-end">
+          {/* <div className="fx-end">
             <p className="fx-fin">fin</p>
-          </div>
+          </div> */}
         </div>
 
         <style>{`
