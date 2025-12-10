@@ -23,7 +23,7 @@ const defaultProjects: ProjectOption[] = [
     icon: <FaGamepad size={24} className="text-white" />,
     tech: "React, Tailwind, GSAP",
     date: "Feb 2025 – Mar 2025",
-    linkk: "https://animationwithgames.vercel.app/"
+    linkk: "https://animationwithgameaaaaas.vercel.app/"
   },
   {
     title: "Delhi Metro Navigation",
@@ -32,7 +32,7 @@ const defaultProjects: ProjectOption[] = [
     icon: <FaTrain size={24} className="text-white" />,
     tech: "Java, DSA",
     date: "Oct 2024",
-    linkk: "https://animationwithgames.vercel.app/"
+    linkk: "https://animationwithgameszz.vercel.app/"
   },
   {
     title: "PixelJot",
@@ -41,7 +41,7 @@ const defaultProjects: ProjectOption[] = [
     icon: <FaStickyNote size={24} className="text-white" />,
     tech: "React, TypeScript, FastAPI, SQLite",
     date: "Oct 2024 – Jan 2025",
-    linkk: "https://animationwithgames.vercel.app/"
+    linkk: "https://animationwithgamesaa.vercel.app/"
   },
   {
     title: "BeYourLoop",
@@ -50,7 +50,7 @@ const defaultProjects: ProjectOption[] = [
     icon: <FaRocket size={24} className="text-white" />,
     tech: "React, Next.js, Node.js",
     date: "Jan 2025 – Present",
-    linkk: "https://animationwithgames.vercel.app/"
+    linkk: "https://animationwithgameaaaas.vercel.app/"
   }
 ];
 
