@@ -521,7 +521,7 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                   </div>
                 </div>
 
-                {/* <div className="fx-footer">
+                <div className="fx-footer">
                   {footer && <div className="fx-footer-title">{footer}</div>}
                   {showProgress && (
                     <div className="fx-progress">
@@ -534,14 +534,14 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                       </div>
                     </div>
                   )}
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* <div className="fx-end">
+          <div className="fx-end">
             <p className="fx-fin">fin</p>
-          </div> */}
+          </div>
         </div>
 
         <style>{`
@@ -586,7 +586,7 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
 
           .fx-header {
             grid-column: 1 / 13; align-self: start; padding-top: 6vh;
-            font-size: clamp(2rem, 9vw, 9rem); line-height: 0.86; text-align: center; color: var(--fx-text);
+            font-size: clamp(1.5rem, 8vw, 9rem); line-height: 0.86; text-align: center; color: var(--fx-text);
           }
           .fx-header > * { display: block; }
 
@@ -617,7 +617,7 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
             opacity: 0.35;
             transition: opacity 0.3s ease, transform 0.3s ease;
             position: relative;
-            font-size: clamp(1rem, 2.4vw, 1.8rem);
+            font-size: clamp(0.75rem, 2.4vw, 1.8rem);
             user-select: none;
             cursor: pointer;
           }
@@ -642,7 +642,7 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
           .fx-featured-title {
             margin: 0; color: var(--fx-text);
             font-weight: 900; letter-spacing: -0.01em;
-            font-size: clamp(2rem, 7.5vw, 6rem);
+            font-size: clamp(1.5rem, 7vw, 6rem);
           }
           .fx-word-mask { display: inline-block; overflow: hidden; vertical-align: middle; }
           .fx-word { display: inline-block; vertical-align: middle; }
@@ -650,22 +650,44 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
           .fx-footer {
             grid-column: 1 / 13; align-self: end; padding-bottom: 5vh; text-align: center;
           }
-          .fx-footer-title { color: var(--fx-text); font-size: clamp(1.6rem, 7vw, 7rem); font-weight: 900; letter-spacing: -0.01em; line-height: 0.9; }
-          .fx-progress { width: 200px; height: 2px; margin: 1rem auto 0; background: rgba(245,245,245,0.28); position: relative; }
+          .fx-footer-title { color: var(--fx-text); font-size: clamp(1.2rem, 6vw, 7rem); font-weight: 900; letter-spacing: -0.01em; line-height: 0.9; }
+          .fx-progress { width: min(200px, 60vw); height: 2px; margin: 1rem auto 0; background: rgba(245,245,245,0.28); position: relative; }
           .fx-progress-fill { position: absolute; inset: 0 auto 0 0; width: 0%; background: var(--fx-text); height: 100%; transition: width 0.3s ease; }
-          .fx-progress-numbers { position: absolute; inset: auto 0 100% 0; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--fx-text); }
+          .fx-progress-numbers { position: absolute; inset: auto 0 100% 0; display: flex; justify-content: space-between; font-size: clamp(0.65rem, 2vw, 0.8rem); color: var(--fx-text); }
 
           .fx-end { height: 100vh; display: grid; place-items: center; }
           .fx-fin { transform: rotate(90deg); color: #111; }
 
-          @media (max-width: 900px) {
-            .fx-content {
-              grid-template-columns: 1fr; row-gap: 3vh;
-              place-items: center;
+          @media (max-width: 768px) {
+            .fx-grid {
+              padding: 0 1rem;
             }
-            .fx-left, .fx-right, .fx-center { height: auto; }
-            .fx-left, .fx-right { justify-items: center; }
-            .fx-track { transform: none !important; }
+            .fx-content {
+              grid-template-columns: 1fr;
+              padding: 0 1rem;
+            }
+            .fx-left, .fx-right { 
+              display: none;
+            }
+            .fx-center { 
+              height: auto;
+              padding: 2rem 0;
+            }
+            .fx-header {
+              padding-top: 4vh;
+            }
+            .fx-footer {
+              padding-bottom: 3vh;
+            }
+          }
+
+          @media (min-width: 769px) and (max-width: 900px) {
+            .fx-content {
+              grid-template-columns: 0.8fr 1.4fr 0.8fr;
+            }
+            .fx-left, .fx-right { 
+              height: 50vh;
+            }
           }
         `}</style>
       </div>
