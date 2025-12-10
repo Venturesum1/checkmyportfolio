@@ -8,6 +8,7 @@ interface ProjectOption {
   icon: React.ReactNode;
   tech: string;
   date: string;
+  linkk: string;
 }
 
 interface InteractiveSelectorProps {
@@ -21,7 +22,8 @@ const defaultProjects: ProjectOption[] = [
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
     icon: <FaGamepad size={24} className="text-white" />,
     tech: "React, Tailwind, GSAP",
-    date: "Feb 2025 – Mar 2025"
+    date: "Feb 2025 – Mar 2025",
+    linkk: "https://animationwithgames.vercel.app/"
   },
   {
     title: "Delhi Metro Navigation",
@@ -29,7 +31,8 @@ const defaultProjects: ProjectOption[] = [
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
     icon: <FaTrain size={24} className="text-white" />,
     tech: "Java, DSA",
-    date: "Oct 2024"
+    date: "Oct 2024",
+    linkk: "https://animationwithgames.vercel.app/"
   },
   {
     title: "PixelJot",
@@ -37,7 +40,8 @@ const defaultProjects: ProjectOption[] = [
     image: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80",
     icon: <FaStickyNote size={24} className="text-white" />,
     tech: "React, TypeScript, FastAPI, SQLite",
-    date: "Oct 2024 – Jan 2025"
+    date: "Oct 2024 – Jan 2025",
+    linkk: "https://animationwithgames.vercel.app/"
   },
   {
     title: "BeYourLoop",
@@ -45,7 +49,8 @@ const defaultProjects: ProjectOption[] = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
     icon: <FaRocket size={24} className="text-white" />,
     tech: "React, Next.js, Node.js",
-    date: "Jan 2025 – Present"
+    date: "Jan 2025 – Present",
+    linkk: "https://animationwithgames.vercel.app/"
   }
 ];
 
@@ -116,12 +121,16 @@ const InteractiveSelector: React.FC<InteractiveSelectorProps> = ({ projects = de
             />
             
             {/* Label with icon and info */}
-            <div className="absolute left-0 right-0 bottom-5 flex items-center justify-start h-auto z-10 pointer-events-none px-4 gap-3 w-full">
+            <div className="absolute left-0 right-0 bottom-5 flex items-center justify-start h-auto z-10 px-4 gap-3 w-full">
               <div className="min-w-[44px] max-w-[44px] h-[44px] flex items-center justify-center rounded-full bg-background/85 backdrop-blur-sm shadow-lg border-2 border-border flex-shrink-0 transition-all duration-200">
                 {project.icon}
               </div>
               <div className="text-foreground whitespace-pre relative overflow-hidden">
-                <div 
+                <a
+                  href={project.linkk}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   className="font-bold text-lg transition-all duration-700 ease-in-out"
                   style={{
                     opacity: activeIndex === index ? 1 : 0,
@@ -129,7 +138,7 @@ const InteractiveSelector: React.FC<InteractiveSelectorProps> = ({ projects = de
                   }}
                 >
                   {project.title}
-                </div>
+                </a>
                 <div 
                   className="text-sm text-muted-foreground transition-all duration-700 ease-in-out"
                   style={{
