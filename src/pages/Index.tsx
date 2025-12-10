@@ -39,7 +39,7 @@ const Index = () => {
 
       <FullScreenScrollFX
         sections={aboutSections}
-        header={<><div>About</div><div>Me</div></>}
+        header={<><div>About Me</div></>}
         footer={<div></div>}
         showProgress
         durations={{ change: 0.7, snap: 800 }}
