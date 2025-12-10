@@ -521,26 +521,8 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
                   </div>
                 </div>
 
-                <div className="fx-footer">
-                  {footer && <div className="fx-footer-title">{footer}</div>}
-                  {showProgress && (
-                    <div className="fx-progress">
-                      <div className="fx-progress-numbers">
-                        <span ref={currentNumberRef}>{String(index + 1).padStart(2, "0")}</span>
-                        <span>{String(total).padStart(2, "0")}</span>
-                      </div>
-                      <div className="fx-progress-bar">
-                        <div className="fx-progress-fill" ref={progressFillRef} />
-                      </div>
-                    </div>
-                  )}
-                </div>
               </div>
             </div>
-          </div>
-
-          <div className="fx-end">
-            <p className="fx-fin">fin</p>
           </div>
         </div>
 

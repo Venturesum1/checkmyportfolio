@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-background">
+      <section className="relative min-h-screen w-full overflow-hidden bg-blue-800">
       {/* Spotlight Effect */}
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
@@ -66,9 +66,11 @@ export function HeroSection() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="font-display text-4xl sm:text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl"
             >
+             <span className="text-gradient">Hi, I am </span>
+                
               <span className="text-gradient">Creative</span>
               <br />
-              <span className="text-foreground">Developer</span>
+              <span className="text-foreground">Developer Soumyasis </span>
             </motion.h1>
 
             {/* Description */}
@@ -145,23 +147,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-6 sm:bottom-8 left-1/2 z-20 -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center gap-1.5 sm:gap-2 text-muted-foreground">
-          <span className="text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ArrowDown className="h-3 w-3 sm:h-4 sm:w-4" />
-          </motion.div>
-        </div>
-      </motion.div>
     </section>
   )
 }
