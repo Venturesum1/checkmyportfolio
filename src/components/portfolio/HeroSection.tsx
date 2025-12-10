@@ -110,19 +110,19 @@ export function HeroSection() {
               className="mt-8 sm:mt-12 flex items-center gap-3 sm:gap-4"
             >
               <a
-                href="#"
+                href="https://github.com/Venturesum1"
                 className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 <Github className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/soumyasis-d-714609224/"
                 className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
               <a
-                href="#"
+                href="soumyasisdas8@gmail.com"
                 className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
