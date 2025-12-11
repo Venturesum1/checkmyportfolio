@@ -1,6 +1,8 @@
 import { AnimatedFolder } from '@/components/ui/3d-folder';
 import InteractiveSelector from '@/components/ui/interactive-selector';
 import { FaCode, FaProjectDiagram, FaLayerGroup } from 'react-icons/fa';
+import { FaGamepad, FaTrain, FaStickyNote, FaRocket } from 'react-icons/fa';
+
 
 const portfolioData = [
   {
@@ -67,33 +69,42 @@ const portfolioData = [
 
 // Mobile projects data for InteractiveSelector
 const mobileProjects = [
-  {
-    title: "AnimeSphere UI",
-    description: "Animated gaming-inspired UI with GSAP",
-    image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&auto=format&fit=crop",
-    icon: <FaCode size={24} className="text-primary" />,
-    tech: "React, Tailwind, GSAP",
-    date: "Feb 2025",
-    linkk: "#animesphere"
-  },
-  {
-    title: "Delhi Metro Navigation",
-    description: "Route finder with Graph algorithms",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&fit=crop",
-    icon: <FaProjectDiagram size={24} className="text-primary" />,
-    tech: "Java, DSA",
-    date: "Oct 2024",
-    linkk: "#delhi-metro"
-  },
-  {
-    title: "PixelJot Notes",
-    description: "Full-stack note management platform",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
-    icon: <FaLayerGroup size={24} className="text-primary" />,
-    tech: "React, TypeScript, FastAPI",
-    date: "Jan 2025",
-    linkk: "#pixeljot"
-  },
+ {
+     title: "AnimeSphere UI",
+     description: "Animated gaming-inspired UI with GSAP",
+     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+     icon: <FaGamepad size={24} className="text-white" />,
+     tech: "React, Tailwind, GSAP",
+     date: "Feb 2025 – Mar 2025",
+     linkk: "https://animationwithgameaaaaas.vercel.app/"
+   },
+   {
+     title: "Delhi Metro Navigation",
+     description: "Route finder with Graph algorithms",
+     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+     icon: <FaTrain size={24} className="text-white" />,
+     tech: "Java, DSA",
+     date: "Oct 2024",
+     linkk: "https://animationwithgameszz.vercel.app/"
+   },
+   {
+     title: "PixelJot",
+     description: "Full-stack note management platform",
+     image: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80",
+     icon: <FaStickyNote size={24} className="text-white" />,
+     tech: "React, TypeScript, FastAPI, SQLite",
+     date: "Oct 2024 – Jan 2025",
+     linkk: "https://animationwithgamesaa.vercel.app/"
+   },
+   {
+     title: "BeYourLoop",
+     description: "Scalable B2B solution platform",
+     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+     icon: <FaRocket size={24} className="text-white" />,
+     tech: "React, Next.js, Node.js",
+     date: "Jan 2025 – Present",
+     linkk: "https://animationwithgameaaaas.vercel.app/"
+   }
 ];
 
 export const ProjectsSection = () => {
