@@ -61,6 +61,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        folder: {
+          back: "hsl(var(--folder-back))",
+          front: "hsl(var(--folder-front))",
+          tab: "hsl(var(--folder-tab))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

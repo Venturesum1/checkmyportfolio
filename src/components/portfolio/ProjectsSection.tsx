@@ -1,18 +1,92 @@
-import InteractiveSelector from '@/components/ui/interactive-selector';
+import { AnimatedFolder } from '@/components/ui/3d-folder';
+
+const portfolioData = [
+  {
+    title: "Web Apps",
+    projects: [
+      { 
+        id: "1", 
+        image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&auto=format&fit=crop",
+        title: "AnimeSphere UI" 
+      },
+      { 
+        id: "2", 
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+        title: "PixelJot Notes" 
+      },
+      { 
+        id: "3", 
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+        title: "BeYourLoop B2B" 
+      },
+    ]
+  },
+  {
+    title: "Algorithms",
+    projects: [
+      { 
+        id: "4", 
+        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&fit=crop",
+        title: "Delhi Metro Nav" 
+      },
+      { 
+        id: "5", 
+        image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop",
+        title: "Path Finder" 
+      },
+      { 
+        id: "6", 
+        image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&auto=format&fit=crop",
+        title: "Graph Visualizer" 
+      },
+    ]
+  },
+  {
+    title: "Full Stack",
+    projects: [
+      { 
+        id: "7", 
+        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop",
+        title: "E-Commerce Platform" 
+      },
+      { 
+        id: "8", 
+        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop",
+        title: "Dashboard App" 
+      },
+      { 
+        id: "9", 
+        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop",
+        title: "Team Collab Tool" 
+      },
+    ]
+  }
+];
 
 export const ProjectsSection = () => {
   return (
-    <section className="min-h-screen w-full bg-background flex flex-col items-center justify-center py-20 px-4">
-      <div className="w-full max-w-4xl mx-auto text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
+    <section className="min-h-screen w-full bg-background flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 px-4">
+      <div className="w-full max-w-4xl mx-auto text-center mb-8 sm:mb-10 md:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-3 sm:mb-4 tracking-tight">
           My Projects
         </h2>
-        <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground font-medium max-w-xl mx-auto px-4">
           Explore my recent work spanning web development, algorithms, and full-stack applications.
         </p>
       </div>
       
-      <InteractiveSelector />
+      <div className="w-full max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center">
+          {portfolioData.map((folder) => (
+            <AnimatedFolder 
+              key={folder.title} 
+              title={folder.title} 
+              projects={folder.projects}
+              className="w-full max-w-[280px]"
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
