@@ -8,7 +8,7 @@ const sections = [
     leftLabel: "Vision",
     title: <>Creative Excellence</>,
     rightLabel: "2024",
-    background: "https://images.pexels.com/photos/3289156/pexels-photo-3289156.jpeg?cs=srgb&dl=pexels-alexfu-3289156.jpg&fm=jpg",
+    background: "https://images.pexels.com/photos/2449452/pexels-photo-2449452.jpeg",
   },
   {
     leftLabel: "Mission",
@@ -51,9 +51,9 @@ export default function About() {
         durations={{ change: 0.7, snap: 800 }}
         colors={{
           text: "rgba(245,245,245,0.92)",
-          overlay: "rgba(0,0,0,0.45)",
-          pageBg: "hsl(240 10% 3.9%)",
-          stageBg: "hsl(240 10% 3.9%)",
+          overlay: "rgba(66, 62, 62, 0.45)",
+          pageBg: "hsla(240, 4%, 18%, 1.00)",
+          stageBg: "hsla(240, 2%, 17%, 1.00)",
         }}
       />
     </div>
