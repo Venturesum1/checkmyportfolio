@@ -1,4 +1,6 @@
 import { AnimatedFolder } from '@/components/ui/3d-folder';
+import InteractiveSelector from '@/components/ui/interactive-selector';
+import { FaCode, FaProjectDiagram, FaLayerGroup } from 'react-icons/fa';
 
 const portfolioData = [
   {
@@ -63,6 +65,37 @@ const portfolioData = [
   }
 ];
 
+// Mobile projects data for InteractiveSelector
+const mobileProjects = [
+  {
+    title: "AnimeSphere UI",
+    description: "Animated gaming-inspired UI with GSAP",
+    image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&auto=format&fit=crop",
+    icon: <FaCode size={24} className="text-primary" />,
+    tech: "React, Tailwind, GSAP",
+    date: "Feb 2025",
+    linkk: "#animesphere"
+  },
+  {
+    title: "Delhi Metro Navigation",
+    description: "Route finder with Graph algorithms",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&fit=crop",
+    icon: <FaProjectDiagram size={24} className="text-primary" />,
+    tech: "Java, DSA",
+    date: "Oct 2024",
+    linkk: "#delhi-metro"
+  },
+  {
+    title: "PixelJot Notes",
+    description: "Full-stack note management platform",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+    icon: <FaLayerGroup size={24} className="text-primary" />,
+    tech: "React, TypeScript, FastAPI",
+    date: "Jan 2025",
+    linkk: "#pixeljot"
+  },
+];
+
 export const ProjectsSection = () => {
   return (
     <section className="min-h-screen w-full bg-background flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 px-4">
@@ -75,7 +108,8 @@ export const ProjectsSection = () => {
         </p>
       </div>
       
-      <div className="w-full max-w-5xl mx-auto">
+      {/* Desktop: 3D Folders */}
+      <div className="hidden md:block w-full max-w-5xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center">
           {portfolioData.map((folder) => (
             <AnimatedFolder 
@@ -86,6 +120,11 @@ export const ProjectsSection = () => {
             />
           ))}
         </div>
+      </div>
+
+      {/* Mobile: Interactive Selector */}
+      <div className="block md:hidden w-full">
+        <InteractiveSelector projects={mobileProjects} />
       </div>
     </section>
   );
