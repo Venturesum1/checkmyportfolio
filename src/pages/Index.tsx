@@ -6,6 +6,8 @@ import { ProjectsSection } from '@/components/portfolio/ProjectsSection'
 import { ContactSection } from '@/components/portfolio/ContactSection'
 import { RatingSection } from '@/components/portfolio/RatingSection'
 import { WhatsAppButton } from '@/components/ui/whatsapp-button'
+import { GlobeSection } from '@/components/portfolio/GlobeSection'
+
 
 const Index = () => {
   return (
@@ -17,6 +19,7 @@ const Index = () => {
       <ProjectsSection />
       <ContactSection />
       <RatingSection />
+      <GlobeSection />
       
       <WhatsAppButton phoneNumber="919800425510" message="Hi! I saw your portfolio and would like to connect." />
     </main>
