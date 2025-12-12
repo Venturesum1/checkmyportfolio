@@ -66,6 +66,11 @@ export default {
           front: "hsl(var(--folder-front))",
           tab: "hsl(var(--folder-tab))",
         },
+         "file-tree": {
+          bg: "hsl(var(--file-tree-bg))",
+          hover: "hsl(var(--file-tree-hover))",
+        },
+        "folder-icon": "hsl(var(--folder-icon))",
       },
       borderRadius: {
         lg: "var(--radius)",

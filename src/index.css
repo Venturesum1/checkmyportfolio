@@ -40,7 +40,11 @@
     --folder-back: 35 70% 45%;
     --folder-front: 40 75% 55%;
     --folder-tab: 30 65% 40%;
-    
+     /* File tree colors */
+    --file-tree-bg: 0 0% 6%;
+    --file-tree-hover: 0 0% 12%;
+    --folder-icon: 45 80% 55%;
+
     /* Custom portfolio tokens */
     --gradient-text: linear-gradient(to bottom, hsl(0 0% 98%), hsl(231, 93%, 16%));
     --gradient-text-hover: linear-gradient(to bottom, hsl(0 0% 100%), hsl(225, 96%, 43%));
