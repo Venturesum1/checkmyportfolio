@@ -5,6 +5,12 @@ import { useCallback, useEffect, useRef, useState } from "react"
 
 import { cn } from "@/lib/utils"
 
+export interface MarkerWithName {
+  location: [number, number]
+  size: number
+  name: string
+}
+
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
   height: 800,
@@ -20,29 +26,30 @@ const GLOBE_CONFIG: COBEOptions = {
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1, 1, 1],
   markers: [
-  // West Bengal (Kolkata)
-  { location: [22.5726, 88.3639], size: 0.06 },
-
-  // Delhi
-  { location: [28.6139, 77.2090], size: 0.07 },
-
-  // Chandigarh
-  { location: [30.7333, 76.7794], size: 0.06 },
-
-  // Himachal Pradesh (Shimla)
-  { location: [31.1048, 77.1734], size: 0.05 },
-
-  // Punjab (Amritsar)
-  { location: [31.6340, 74.8723], size: 0.06 }
-]
+    { location: [22.5726, 88.3639], size: 0.06 },
+    { location: [28.6139, 77.2090], size: 0.07 },
+    { location: [30.7333, 76.7794], size: 0.06 },
+    { location: [31.1048, 77.1734], size: 0.05 },
+    { location: [31.6340, 74.8723], size: 0.06 }
+  ],
 }
+
+const DEFAULT_MARKERS: MarkerWithName[] = [
+  { location: [22.5726, 88.3639], size: 0.06, name: "Kolkata" },
+  { location: [28.6139, 77.2090], size: 0.07, name: "Delhi" },
+  { location: [30.7333, 76.7794], size: 0.06, name: "Chandigarh" },
+  { location: [31.1048, 77.1734], size: 0.05, name: "Shimla" },
+  { location: [31.6340, 74.8723], size: 0.06, name: "Amritsar" }
+]
 
 export function Globe({
   className,
   config = GLOBE_CONFIG,
+  markers = DEFAULT_MARKERS,
 }: {
   className?: string
   config?: COBEOptions
+  markers?: MarkerWithName[]
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -52,6 +59,33 @@ export function Globe({
   const phiRef = useRef(0)
   const widthRef = useRef(0)
   const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null)
+  const [activeLocation, setActiveLocation] = useState<string | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  // Detect mobile
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
+  // Auto-cycle locations on mobile
+  useEffect(() => {
+    if (!isMobile) {
+      setActiveLocation(null)
+      return
+    }
+
+    let index = 0
+    const interval = setInterval(() => {
+      setActiveLocation(markers[index].name)
+      index = (index + 1) % markers.length
+    }, 2500)
+
+    return () => clearInterval(interval)
+  }, [isMobile, markers])
 
   const updatePointerInteraction = (value: any) => {
     pointerInteracting.current = value
@@ -68,6 +102,49 @@ export function Globe({
     }
   }
 
+  // Check if mouse is near a marker
+  const checkMarkerHover = useCallback((clientX: number, clientY: number) => {
+    if (!containerRef.current || isMobile) return
+
+    const rect = containerRef.current.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+    const radius = rect.width / 2
+
+    // Convert screen position to approximate globe coordinates
+    const relX = (clientX - centerX) / radius
+    const relY = (clientY - centerY) / radius
+
+    // Simple proximity check - find closest marker
+    let closestMarker: MarkerWithName | null = null
+    let minDist = 0.15 // Threshold for hover detection
+
+    markers.forEach((marker) => {
+      const [lat, lon] = marker.location
+      const phi = phiRef.current + r
+      
+      // Convert lat/lon to 3D coordinates
+      const latRad = (lat * Math.PI) / 180
+      const lonRad = (lon * Math.PI) / 180 - phi
+      
+      const x = Math.cos(latRad) * Math.sin(lonRad)
+      const y = -Math.sin(latRad)
+      const z = Math.cos(latRad) * Math.cos(lonRad)
+      
+      // Only check front-facing markers
+      if (z > 0) {
+        const dist = Math.sqrt((x - relX) ** 2 + (y - relY) ** 2)
+        if (dist < minDist) {
+          minDist = dist
+          closestMarker = marker
+        }
+      }
+    })
+
+    setActiveLocation(closestMarker?.name || null)
+    setMousePos({ x: clientX, y: clientY })
+  }, [isMobile, markers, r])
+
   const onRender = useCallback(
     (state: Record<string, any>) => {
       if (!pointerInteracting.current) phiRef.current += 0.005
@@ -81,7 +158,6 @@ export function Globe({
   const initGlobe = useCallback(() => {
     if (!canvasRef.current || !containerRef.current) return
     
-    // Destroy existing globe
     if (globeRef.current) {
       globeRef.current.destroy()
     }
@@ -133,12 +209,38 @@ export function Globe({
           )
         }
         onPointerUp={() => updatePointerInteraction(null)}
-        onPointerOut={() => updatePointerInteraction(null)}
-        onMouseMove={(e) => updateMovement(e.clientX)}
+        onPointerOut={() => {
+          updatePointerInteraction(null)
+          if (!isMobile) setActiveLocation(null)
+        }}
+        onMouseMove={(e) => {
+          updateMovement(e.clientX)
+          checkMarkerHover(e.clientX, e.clientY)
+        }}
         onTouchMove={(e) =>
           e.touches[0] && updateMovement(e.touches[0].clientX)
         }
       />
+      
+      {/* Desktop tooltip */}
+      {activeLocation && !isMobile && (
+        <div
+          className="pointer-events-none fixed z-50 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground shadow-lg animate-fade-in"
+          style={{
+            left: mousePos.x + 15,
+            top: mousePos.y - 10,
+          }}
+        >
+          {activeLocation}
+        </div>
+      )}
+      
+      {/* Mobile location badge */}
+      {activeLocation && isMobile && (
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg animate-fade-in">
+          📍 {activeLocation}
+        </div>
+      )}
     </div>
   )
 }
