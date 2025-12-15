@@ -97,9 +97,16 @@ export function HeroSection() {
                   <ArrowDown className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-y-1" />
                 </Link>
               </Button>
-              <Button variant="outline" size="default" className="text-sm sm:text-base">
+              <a href='#combinedsedction'>
+              <Button 
+                variant="outline" 
+                size="default" 
+                className="text-sm sm:text-base"
+                onClick={() => document.getElementById('combined-section')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Get in Touch
               </Button>
+              </a>
             </motion.div>
 
             {/* Social Links */}

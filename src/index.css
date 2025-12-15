@@ -6,6 +6,64 @@
 
 @layer base {
   :root {
+       --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 220 70% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 60%;
+
+    --radius: 0.75rem;
+
+    /* Folder colors */
+    --folder-back: 35 70% 45%;
+    --folder-front: 40 75% 55%;
+    --folder-tab: 30 65% 40%;
+
+    /* File tree colors */
+    --file-tree-bg: 0 0% 96%;
+    --file-tree-hover: 0 0% 92%;
+    --folder-icon: 45 80% 55%;
+
+    /* Custom portfolio tokens */
+    --gradient-text: linear-gradient(to bottom, hsl(0 0% 9%), hsl(0 0% 40%));
+    --gradient-text-hover: linear-gradient(to bottom, hsl(0 0% 0%), hsl(0 0% 30%));
+    --gradient-accent: linear-gradient(135deg, hsl(220 70% 55%), hsl(280 70% 55%));
+    --glow-primary: 0 0 60px hsl(220 70% 55% / 0.2);
+    --glow-accent: 0 0 80px hsl(280 70% 55% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 0 0% 9%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 0% 60%;
+  }
+
+  .dark {
     --background: 0 0% 2%;
     --foreground: 0 0% 98%;
 
@@ -27,7 +85,7 @@
     --accent: 220 70% 55%;
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 15%;

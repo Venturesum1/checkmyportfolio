@@ -109,7 +109,7 @@ const mobileProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="min-h-screen w-full bg-background flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 px-4">
+    <section className=" w-full bg-background flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 px-4">
       <div className="w-full max-w-4xl mx-auto text-center mb-8 sm:mb-10 md:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-3 sm:mb-4 tracking-tight">
           My Projects
