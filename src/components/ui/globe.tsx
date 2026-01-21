@@ -12,8 +12,8 @@ export interface MarkerWithName {
 }
 
 const GLOBE_CONFIG: COBEOptions = {
-  width: 800,
-  height: 800,
+  width: 400,
+  height: 400,
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,

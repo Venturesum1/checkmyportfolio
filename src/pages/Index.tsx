@@ -10,6 +10,7 @@ import { GlobeSection } from '@/components/portfolio/GlobeSection'
 import { CurrentLocationSection } from '@/components/portfolio/CurrentLocationSection'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { CombinedSection } from '@/components/portfolio/CombinedSection'
+import { HowIWorkSection } from '@/components/portfolio/HowIWorkSection'
 
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <ThemeToggle />
       <HeroSection />
       <AboutSection />
+      <HowIWorkSection />
       <ExperienceSection />
       <SkillsSection />
       <ProjectsSection />
