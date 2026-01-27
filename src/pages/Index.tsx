@@ -11,22 +11,43 @@ import { CurrentLocationSection } from '@/components/portfolio/CurrentLocationSe
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { CombinedSection } from '@/components/portfolio/CombinedSection'
 import { HowIWorkSection } from '@/components/portfolio/HowIWorkSection'
+import { Navbar } from '@/components/portfolio/Navbar'
 
 
 const Index = () => {
   return (
     <main className="relative">
       <ThemeToggle />
-      <HeroSection />
+      <Navbar />
+      <div id="hero">
+        <HeroSection />
+      </div>
+      <div id="about">
       <AboutSection />
-      <HowIWorkSection />
-      <ExperienceSection />
-      <SkillsSection />
-      <ProjectsSection />
+      </div>
+      <div id="how-i-work">
+        <HowIWorkSection />
+      </div>
+
+      <div id="experience">
+        <ExperienceSection />
+      </div>
+
+      <div id="skills">
+        <SkillsSection />
+      </div>
+      
+      <div id="projects">
+        <ProjectsSection />
+      </div>
       {/* <ContactSection /> */}
+      <div id="globe">
       <GlobeSection />
+      </div>
       {/* <CurrentLocationSection /> */}
+      <div id="contact">
         <CombinedSection />
+      </div>
        {/* <RatingSection /> */}
       <WhatsAppButton phoneNumber="919800425510" message="Hi! I saw your portfolio and would like to connect." />
     </main>
