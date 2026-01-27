@@ -62,10 +62,12 @@ const navItems: NavItem[] = [
 
 export const Navbar = () => {
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+    <div className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50">
       <LimelightNav 
         items={navItems} 
-        className="bg-card/60 border-border/30 shadow-lg shadow-background/20"
+        className="bg-card/60 border-border/30 shadow-lg shadow-background/20 h-12 md:h-16 px-1 md:px-2"
+        iconContainerClassName="p-3 md:p-5"
+        iconClassName="w-4 h-4 md:w-6 md:h-6"
       />
     </div>
   );
