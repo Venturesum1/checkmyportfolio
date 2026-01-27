@@ -73,9 +73,9 @@ export function CombinedSection() {
               />
             </div>
 
-            <p className="text-muted-foreground/60 text-xs mt-4">
+            {/* <p className="text-muted-foreground/60 text-xs mt-4">
               Hover over icons to see the magic ✨
-            </p>
+            </p> */}
           </div>
 
           {/* Current Location */}
