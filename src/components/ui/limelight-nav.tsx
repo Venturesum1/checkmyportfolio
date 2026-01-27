@@ -80,14 +80,14 @@ export const LimelightNav = ({
           <a
             key={id}
             ref={el => (navItemRefs.current[index] = el)}
-            className={`relative z-20 flex h-full cursor-pointer items-center justify-center p-5 ${iconContainerClassName || ''}`}
+            className={`relative z-20 flex h-full cursor-pointer items-center justify-center ${iconContainerClassName || 'p-5'}`}
             onClick={() => handleItemClick(index, onClick)}
             aria-label={label}
           >
             {cloneElement(icon, {
-              className: `w-6 h-6 transition-opacity duration-100 ease-in-out ${
+              className: `transition-opacity duration-100 ease-in-out ${
                 activeIndex === index ? 'opacity-100' : 'opacity-40'
-              } ${icon.props.className || ''} ${iconClassName || ''}`,
+              } ${iconClassName || 'w-6 h-6'} ${icon.props.className || ''}`,
             })}
           </a>
       ))}
