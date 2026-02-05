@@ -12,6 +12,8 @@ import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { CombinedSection } from '@/components/portfolio/CombinedSection'
 import { HowIWorkSection } from '@/components/portfolio/HowIWorkSection'
 import { Navbar } from '@/components/portfolio/Navbar'
+import { OpenToWorkSection } from '@/components/portfolio/OpenToWorkSection'
+
 
 
 const Index = () => {
@@ -48,6 +50,7 @@ const Index = () => {
       <div id="contact">
         <CombinedSection />
       </div>
+        <OpenToWorkSection />
        {/* <RatingSection /> */}
       <WhatsAppButton phoneNumber="919800425510" message="Hi! I saw your portfolio and would like to connect." />
     </main>
