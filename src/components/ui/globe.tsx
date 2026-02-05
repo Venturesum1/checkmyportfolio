@@ -26,11 +26,18 @@ const GLOBE_CONFIG: COBEOptions = {
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1, 1, 1],
   markers: [
-    { location: [22.5726, 88.3639], size: 0.06 },
-    { location: [28.6139, 77.2090], size: 0.07 },
-    { location: [30.7333, 76.7794], size: 0.06 },
-    { location: [31.1048, 77.1734], size: 0.05 },
-    { location: [31.6340, 74.8723], size: 0.06 }
+    { location: [22.5726, 88.3639], size: 0.06 }, // Kolkata
+    { location: [28.6139, 77.2090], size: 0.07 }, // Delhi
+    { location: [30.7333, 76.7794], size: 0.06 }, // Chandigarh
+    { location: [31.1048, 77.1734], size: 0.05 }, // Shimla
+    { location: [31.6340, 74.8723], size: 0.06 }, // Amritsar
+
+    { location: [26.2006, 92.9376], size: 0.06 }, // Assam
+    { location: [28.2180, 94.7278], size: 0.05 }, // Arunachal Pradesh
+    { location: [24.6637, 93.9063], size: 0.05 }, // Manipur
+    { location: [27.0360, 88.2627], size: 0.05 }, // Darjeeling
+    { location: [17.6868, 83.2185], size: 0.06 }, // Visakhapatnam (Vizag)
+    { location: [20.9517, 85.0985], size: 0.06 }, // Odisha
   ],
 }
 
@@ -39,7 +46,14 @@ const DEFAULT_MARKERS: MarkerWithName[] = [
   { location: [28.6139, 77.2090], size: 0.07, name: "Delhi" },
   { location: [30.7333, 76.7794], size: 0.06, name: "Chandigarh" },
   { location: [31.1048, 77.1734], size: 0.05, name: "Shimla" },
-  { location: [31.6340, 74.8723], size: 0.06, name: "Amritsar" }
+  { location: [31.6340, 74.8723], size: 0.06, name: "Amritsar" },
+
+  { location: [26.2006, 92.9376], size: 0.06, name: "Assam" },
+  { location: [28.2180, 94.7278], size: 0.05, name: "Arunachal Pradesh" },
+  { location: [24.6637, 93.9063], size: 0.05, name: "Manipur" },
+  { location: [27.0360, 88.2627], size: 0.05, name: "Darjeeling" },
+  { location: [17.6868, 83.2185], size: 0.06, name: "Visakhapatnam" },
+  { location: [20.9517, 85.0985], size: 0.06, name: "Odisha" },
 ]
 
 export function Globe({
