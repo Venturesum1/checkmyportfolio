@@ -14,8 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
+        // sans: ['Inter', 'sans-serif'],
+        // display: ['Space Grotesk', 'sans-serif'],
+        sans: ['Tapestry', 'cursive'],
+        display: ['Tapestry', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
